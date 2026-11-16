@@ -1,0 +1,664 @@
+/* ============== Layout Style =============== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.layout-main {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 24px 28px;
+}
+
+
+/* ============== Sidebar Style =============== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--primary-dark);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 22px 14px 14px;
+    z-index: 20;
+    transition: transform 0.25s;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 28px;
+}
+
+.sidebar-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    object-fit: cover;
+}
+
+.sidebar-brand h2 {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.sidebar-brand p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 16px;
+    border-radius: 10px;
+    color: #dbe6ff;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-menu a.active {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(29, 99, 232, 0.4);
+}
+
+.sidebar-building {
+    flex: 1;
+    margin: 16px -14px 0;
+    opacity: 0.35;
+    background:
+        linear-gradient(to bottom, var(--primary-dark), transparent 40%),
+        url('../images/campus-building-faded.jpg') center bottom / cover;
+}
+
+.sidebar-help {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.sidebar-help > i {
+    font-size: 24px;
+}
+
+.sidebar-help strong {
+    display: block;
+    font-size: 14px;
+}
+
+
+/* ============== Header Style =============== */
+.topbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.topbar-title {
+    flex: 1;
+}
+
+.topbar-title h1 {
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.topbar-title p {
+    color: var(--primary-dark);
+    font-size: 15px;
+}
+
+.topbar-bell {
+    position: relative;
+    color: var(--text);
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-bell.has-unread::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--danger);
+    border: 2px solid var(--white);
+}
+
+.topbar-user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.topbar-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topbar-info strong {
+    display: block;
+    line-height: 1.2;
+    font-size: 15px;
+}
+
+.topbar-info small {
+    font-size: 13px;
+    color: var(--text);
+}
+
+.topbar-arrow {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.topbar-dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    min-width: 160px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.topbar-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+}
+
+.topbar-dropdown a:hover {
+    background: var(--primary-soft);
+}
+
+.topbar-user.open .topbar-dropdown {
+    display: block;
+}
+
+
+/* ============== Footer Style =============== */
+.footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+/* ============== Index Hero Style =============== */
+.index-hero {
+    border-radius: 14px;
+    padding: 40px 36px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-bottom: 22px;
+    background:
+        linear-gradient(90deg, rgba(11, 42, 91, 0.96) 25%, rgba(11, 42, 91, 0.55)),
+        url('../images/campus-banner.jpg') center / cover;
+}
+
+.index-hero-icon {
+    width: 78px;
+    height: 78px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: grid;
+    place-items: center;
+    font-size: 34px;
+    flex-shrink: 0;
+}
+
+.index-hero-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.index-hero h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.index-hero p {
+    max-width: 420px;
+    opacity: 0.92;
+    font-size: 15px;
+}
+
+
+/* ============== Index Stats Style =============== */
+.index-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.index-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border-radius: var(--radius);
+    background: var(--tone-soft);
+    border: 1px solid var(--tone-soft);
+    box-shadow: var(--shadow);
+}
+
+.index-stat-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--tone-icon);
+    color: var(--tone);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.index-stat span {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.index-stat strong {
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+.index-stat-primary {
+    --tone: var(--primary);
+    --tone-soft: var(--primary-soft);
+    --tone-icon: #d6e4fc;
+}
+
+.index-stat-success {
+    --tone: var(--success);
+    --tone-soft: var(--success-soft);
+    --tone-icon: #cdeed7;
+}
+
+.index-stat-warning {
+    --tone: var(--warning);
+    --tone-soft: var(--warning-soft);
+    --tone-icon: #fde6b5;
+}
+
+.index-stat-danger {
+    --tone: var(--danger);
+    --tone-soft: var(--danger-soft);
+    --tone-icon: #f9cccc;
+}
+
+
+/* ============== Index Grid Style =============== */
+.index-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.index-title-icon {
+    color: var(--primary);
+    margin-right: 6px;
+}
+
+
+/* ============== Index Lab Availability Style =============== */
+.index-lab {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+}
+
+.index-lab-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+}
+
+.index-lab-name {
+    flex: 1;
+}
+
+.index-lab-name strong,
+.index-lab-name small {
+    display: block;
+}
+
+.index-lab-total {
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+
+/* ============== Index Quick Actions Style =============== */
+.index-action {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+}
+
+.index-action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+}
+
+.index-action-text {
+    flex: 1;
+}
+
+.index-action-text strong,
+.index-action-text small {
+    display: block;
+}
+
+.index-action-text strong {
+    color: var(--text);
+}
+
+.index-action-blue {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.index-action-purple {
+    background: var(--purple-soft);
+    color: var(--purple);
+}
+
+
+/* ============== Index Notifications Style =============== */
+.index-notice {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-top: 1px solid var(--border);
+}
+
+.index-notice p {
+    flex: 1;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.index-notice-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.index-notice-time {
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.index-notice-info {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.index-notice-success {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+.index-notice-warning {
+    background: var(--warning-soft);
+    color: var(--warning);
+}
+
+.index-notice-danger {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+
+/* ============== Index Status Overview Style =============== */
+.index-status {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+}
+
+.index-donut {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: conic-gradient(
+        var(--success) 0 var(--a),
+        var(--warning) var(--a) var(--m),
+        var(--danger) var(--m) 100%
+    );
+}
+
+.index-donut div {
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-donut strong {
+    font-size: 26px;
+    line-height: 1.1;
+}
+
+.index-donut small {
+    font-size: 12px;
+}
+
+.index-legend {
+    flex: 1;
+    min-width: 190px;
+}
+
+.index-legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.index-legend b {
+    margin-left: auto;
+}
+
+.index-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.index-dot-success {
+    background: var(--success);
+}
+
+.index-dot-warning {
+    background: #f5b82e;
+}
+
+.index-dot-danger {
+    background: var(--danger);
+}
+
+
+/* ============== Responsive Style =============== */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .layout-main {
+        margin-left: 0;
+    }
+
+    .topbar {
+        padding: 12px 16px;
+        gap: 14px;
+    }
+
+    .topbar-toggle {
+        display: block;
+    }
+
+    .topbar-info,
+    .topbar-arrow {
+        display: none;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .index-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .index-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .index-hero {
+        padding: 26px 22px;
+    }
+
+    .index-hero h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .index-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .index-hero-icon {
+        display: none;
+    }
+
+    .topbar-title h1 {
+        font-size: 16px;
+    }
+
+    .topbar-title p {
+        display: none;
+    }
+
+    .index-lab {
+        flex-wrap: wrap;
+    }
+}

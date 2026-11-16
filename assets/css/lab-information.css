@@ -1,0 +1,198 @@
+/* ============== Layout =============== */
+.lab-information-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+.lab-information-list {
+    display: grid;
+    gap: 20px;
+}
+
+
+/* ============== Lab Card =============== */
+.lab-information-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.lab-information-head h3 {
+    font-size: 18px;
+}
+
+.lab-information-desc {
+    margin-bottom: 14px;
+    color: var(--muted);
+}
+
+.lab-information-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-bottom: 18px;
+}
+
+.lab-information-details i {
+    width: 16px;
+    margin-right: 6px;
+    color: var(--primary);
+}
+
+
+/* ============== Lab Status Badges =============== */
+.lab-information-badge-active {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+.lab-information-badge-maintenance {
+    background: var(--warning-soft);
+    color: var(--warning);
+}
+
+.lab-information-badge-inactive {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+
+/* ============== Computer Statistics =============== */
+.lab-information-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.lab-information-stats div {
+    padding: 12px 8px;
+    border-radius: 8px;
+    background: var(--bg);
+    text-align: center;
+}
+
+.lab-information-stats strong {
+    display: block;
+    font-size: 20px;
+}
+
+.lab-information-stats small {
+    font-size: 12px;
+}
+
+.lab-information-available strong {
+    color: var(--success);
+}
+
+.lab-information-inuse strong {
+    color: var(--warning);
+}
+
+.lab-information-maintenance strong {
+    color: var(--purple);
+}
+
+.lab-information-out strong {
+    color: var(--danger);
+}
+
+
+/* ============== Availability Bar =============== */
+.lab-information-bar {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--border);
+}
+
+.lab-information-bar span {
+    display: block;
+    height: 100%;
+    background: var(--success);
+}
+
+.lab-information-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+
+/* ============== Announcements =============== */
+.lab-information-note {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    background: var(--primary-soft);
+}
+
+.lab-note-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    background: rgba(29, 99, 232, 0.12);
+    color: var(--primary);
+}
+
+.lab-note-badge.campus-wide {
+    background: rgba(100, 116, 139, 0.14);
+    color: var(--muted);
+}
+
+.lab-information-note p {
+    margin-bottom: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+.lab-information-note small {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    color: var(--muted);
+}
+
+.lab-information-note-success {
+    border-color: var(--success);
+    background: var(--success-soft);
+}
+
+.lab-information-note-warning {
+    border-color: var(--warning);
+    background: var(--warning-soft);
+}
+
+.lab-information-note-danger {
+    border-color: var(--danger);
+    background: var(--danger-soft);
+}
+
+
+/* ============== Responsive =============== */
+@media (max-width: 1000px) {
+    .lab-information-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .lab-information-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,185 @@
+/* ============== Table Card =============== */
+.my-reports-card {
+    padding: 8px 20px;
+}
+
+
+/* ============== Status Badges =============== */
+.my-reports-badge-pending {
+    background: var(--warning-soft);
+    color: var(--warning);
+}
+
+.my-reports-badge-under_review {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.my-reports-badge-in_progress {
+    background: var(--purple-soft);
+    color: var(--purple);
+}
+
+.my-reports-badge-resolved {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+.my-reports-badge-rejected {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+
+/* ============== View Button =============== */
+.my-reports-view,
+.my-reports-view-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.my-reports-view:hover,
+.my-reports-view-link:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+/* ============== Pagination =============== */
+.my-reports-pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.my-reports-page {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.my-reports-page:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.my-reports-page.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.my-reports-page.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+/* ============== Details Popup =============== */
+.my-reports-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 27, 61, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+.my-reports-modal.open {
+    display: flex;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.my-reports-dialog {
+    width: 100%;
+    max-width: 580px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    animation: slideDown 0.22s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-16px); opacity: 0.8; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.my-reports-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.my-reports-info small,
+.my-reports-block small {
+    display: block;
+}
+
+.my-reports-block {
+    margin-bottom: 16px;
+}
+
+.my-reports-photo {
+    display: none;
+    width: 100%;
+    max-height: 240px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+
+/* ============== Timeline =============== */
+.my-reports-timeline {
+    margin-top: 8px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
+}
+
+.my-reports-timeline li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+
+.my-reports-timeline small {
+    display: block;
+}
+
+
+/* ============== Responsive =============== */
+@media (max-width: 600px) {
+    .my-reports-info {
+        grid-template-columns: 1fr;
+    }
+}

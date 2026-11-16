@@ -1,0 +1,100 @@
+/* ============== Layout =============== */
+.report-issue-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+    align-items: start;
+}
+
+.report-issue-required {
+    color: var(--danger);
+}
+
+
+/* ============== Description Counter =============== */
+.report-issue-counter {
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+}
+
+
+/* ============== Image Upload =============== */
+.report-issue-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 18px;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+    text-align: center;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.report-issue-upload:hover {
+    border-color: var(--primary);
+}
+
+.report-issue-upload i {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.report-issue-upload strong {
+    font-size: 13px;
+}
+
+
+/* ============== Common Components Panel =============== */
+.report-issue-panel {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--primary-soft);
+}
+
+.report-issue-panel h3 {
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.report-issue-panel h3 i {
+    margin-right: 6px;
+    color: var(--primary);
+}
+
+.report-issue-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+}
+
+.report-issue-item small {
+    display: block;
+}
+
+.report-issue-item-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--primary-dark);
+    font-size: 18px;
+}
+
+
+/* ============== Responsive =============== */
+@media (max-width: 900px) {
+    .report-issue-layout {
+        grid-template-columns: 1fr;
+    }
+}

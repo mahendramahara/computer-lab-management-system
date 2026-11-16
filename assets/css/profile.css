@@ -1,0 +1,119 @@
+/* ============== Layout =============== */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.profile-forms {
+    display: grid;
+    gap: 20px;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
+/* ============== Profile Summary =============== */
+.profile-summary {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 12px;
+    object-fit: cover;
+    border: 3px solid var(--primary-soft);
+    border-radius: 50%;
+}
+
+.profile-photo-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.profile-photo[hidden] {
+    display: none;
+}
+
+.profile-summary h3 {
+    font-size: 18px;
+}
+
+.profile-info {
+    margin: 18px 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    text-align: left;
+}
+
+.profile-info li {
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.profile-info i {
+    width: 18px;
+    margin-right: 6px;
+    color: var(--primary);
+}
+
+
+/* ============== Report Summary =============== */
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.profile-stats div {
+    padding: 10px 6px;
+    border-radius: 8px;
+    background: var(--bg);
+}
+
+.profile-stats strong {
+    display: block;
+    font-size: 18px;
+}
+
+
+/* ============== Photo Upload =============== */
+.profile-hint {
+    display: block;
+    margin-top: 6px;
+}
+
+.form-group .btn {
+    font-weight: 600;
+}
+
+.form-control:disabled {
+    background: var(--bg);
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+
+/* ============== Responsive =============== */
+@media (max-width: 900px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .profile-row {
+        grid-template-columns: 1fr;
+    }
+}
