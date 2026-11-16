@@ -1,7 +1,7 @@
 # Computer Laboratory Management System
 ### Mahendra Multiple Campus (Dang) — BCA 4th Semester Project (2024 Batch)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 ![PHP](https://img.shields.io/badge/PHP-8.x-777bb4.svg)
 ![Database](https://img.shields.io/badge/MySQL-MariaDB-00758f.svg)
 ![Status](https://img.shields.io/badge/Release-Production--Ready-success.svg)
@@ -83,7 +83,8 @@ computer-lab-management-system/
 ├── includes/                  # Student portal layout components (navbar, footer, auth guards)
 ├── scripts/                   # Database seeders (users_seeder.php, fault_reports_seeder.php)
 ├── uploads/                   # User-uploaded fault evidence photos
-├── database.sql               # Production schema and initial relational seed
+├── database/                  # SQL schema & database backup
+│   └── lab_management_system_db.sql
 ├── index.php                  # Student home & lab workstation directory
 ├── login.php                  # Student login with role navigation
 ├── register.php               # Student self-registration gateway
@@ -116,7 +117,7 @@ C:\xampp\htdocs\computer-lab-management-system
    ```
 4. Import the provided schema file:
    ```
-   database.sql
+   database/lab_management_system_db.sql
    ```
    *(Alternatively, run the database seeder scripts inside `scripts/` to seed the official BCA 2024 batch student roster and real-world fault reports).*
 
